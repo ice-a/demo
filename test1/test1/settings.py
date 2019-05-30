@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'test1',
+    'demo1',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'Asia>Shaghai'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -119,4 +119,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES=[os.path.join()]
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+# 配置图片
+MEDIA_ROOT=os.path.join(BASE_DIR,"static/media")
+#邮件配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True      #是否使用TLS安全传输协议(用于在两个通信应用程序之间提供保密性和数据完整性。
+EMAIL_USE_SSL = False     #是否使用SSL加密，qq企业邮箱要求使用
+EMAIL_HOST = 'smtp.qq.com' #发送邮件的邮箱 的 SMTP服务器，这里用了163邮箱
+EMAIL_PORT = 25 #发件箱的SMTP服务器端口
+EMAIL_HOST_USER = '2357725809@qq.com' #发送邮件的邮箱地址
+EMAIL_HOST_PASSWORD = 'koyfoyjyesjeebed'
+DEFAULT_FROM_EMAIL = 'ice <2357725809@qq.com>'
