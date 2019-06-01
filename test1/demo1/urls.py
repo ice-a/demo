@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^wedding/$',views.wedding,name='wedding'),
     url(r'^services/$',views.services,name='services'),
     url(r'^about/$',views.about,name='about'),
-    url(r'^index/$',views.index,name='index'),
+    url('',views.index,name='index'),
 ]
